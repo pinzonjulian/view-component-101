@@ -3,15 +3,29 @@
     <div class="flex justify-center mb-4">
       <div class="rounded-full w-20 h-20 shadow bg-orange-300 flex items-center justify-center">
         <span class="text-2xl font-black text-orange-800">
-          <%= invitation.user.name.initials %>
+          <% if invitation.user.avatar_url.present? %>
+            <%= image_tag invitation.user.avatar_url, class: 'w-20' %>
+          <% elsif invitation.user.name.present? %>
+            <%= invitation.user.name.initials %>
+          <% else %>
+            NN
+          <% end %>
         </span>
       </div>
     </div>
     <div class="text-center bold text-lg mb-4">
-      <%= invitation.user.name %>
+      <% if invitation.user.name.present? %>
+        <%= invitation.user.name %>
+      <% else %>
+        Anonymous user
+      <% end %>
     </div>
     <div class="text-center mb-4">
-      <span class="px-4 py-1 shadow bg-orange-900 text-white rounded-full">
+      <span class="px-4 py-1 shadow <%=
+        invitation.state.in?(%w(busy_that_day too_far_away pending)) ? 'bg-orange-600' :
+        invitation.state.in?(%w(dying_to_go arriving_late)) ? 'bg-black' : 'bg-orange-900' %>
+        text-white rounded-full"
+      >
         <%= invitation.state.humanize %>
       </span>
     </div>
