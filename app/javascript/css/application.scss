@@ -1,4 +1,12 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
-@import "tailwindcss/utilities";
-@import '@fortawesome/fontawesome-free';
+
+.text-medieval {
+  font-family: 'UnifrakturCook', cursive;
+}
+
+.text-body {
+  font-family: 'Unna', serif;
+}
+  @import "tailwindcss/utilities";
+  @import '@fortawesome/fontawesome-free';

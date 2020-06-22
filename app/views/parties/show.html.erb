@@ -6,7 +6,7 @@
         <div class="flex justify-center mb-4">
           <div class="rounded-full w-20 h-20 shadow bg-orange-200 flex items-center justify-center">
             <span class="text-2xl bold text-orange-800">
-              <%= invitation.user.name.initials %>
+              <%= invitation.user.name.initials if invitation.user.name.present? %>
             </span>
           </div>
         </div>
