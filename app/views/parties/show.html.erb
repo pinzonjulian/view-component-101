@@ -1,4 +1,32 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_party_path(@party) %> |
-<%= link_to 'Back', parties_path %>
+<h1 class="text-4xl font-bold text-center mb-8"><%= @party.name %></h1>
+<div class="flex flex-wrap">
+  <% @invitations.each do |invitation| %>
+    <div class="px-4 py-6 w-full md:w-1/3">
+      <div class="shadow p-4">
+        <div class="flex justify-center mb-4">
+          <div class="rounded-full w-20 h-20 shadow bg-orange-200 flex items-center justify-center">
+            <span class="text-2xl bold text-orange-800">
+              <%= invitation.user.name.initials %>
+            </span>
+          </div>
+        </div>
+        <div class="text-center bold text-lg mb-4">
+          <%= invitation.user.name %>
+        </div>
+        <div class="text-center mb-4">
+          <span class="px-4 py shadow bg-blue-100 rounded-full">
+            <%= invitation.state.humanize %>
+          </span>
+        </div>
+        <div class="flex justify-between">
+          <% invitation.map_transit_predictions.each do |mode, time| %>
+            <div class="flex flex-col items-center p-4">
+              <span class="fas fa-<%= mode %> text-yellow-800 text-lg mb-2"></span>
+              <div><%= time %></div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

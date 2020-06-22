@@ -10,6 +10,7 @@ class PartiesController < ApplicationController
   # GET /parties/1
   # GET /parties/1.json
   def show
+    @invitations = @party.invitations
   end
 
   # GET /parties/new

@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_06_22_111734) do
   enable_extension "plpgsql"
 
   create_table "invitations", force: :cascade do |t|
-    t.integer "state"
+    t.integer "state", default: 0
     t.string "comment"
     t.bigint "user_id", null: false
     t.bigint "party_id", null: false
