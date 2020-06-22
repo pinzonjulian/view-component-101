@@ -24,11 +24,7 @@ class InvitationComponent < ViewComponent::Base
               :initials, :name, :state
 
   def avatar
-    if avatar_url.present?
-      helpers.image_tag(avatar_url, class: 'w-20')
-    else
-      initials
-    end
+    render AvatarComponent.new(url: avatar_url, initials: initials)
   end
 
   def state_modifier_class
