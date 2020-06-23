@@ -70,6 +70,6 @@ class PartiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def party_params
-      params.fetch(:party, {})
+      params.require(:party).permit(:name, :description)
     end
 end

@@ -35,7 +35,7 @@ class InvitationComponent < ViewComponent::Base
     invitation.transit_predictions.map do |mode, time|
       content_tag :div, class: 'flex flex-col items-center p-4' do
         concat content_tag(:span, nil, class: "fas fa-#{mode} text-yellow-800 text-lg mb-2")
-        concat content_tag(:time, time)
+        concat content_tag(:time, time, class: 'text-body text-orange-900 text-lg')
       end
     end.join('').html_safe
   end
