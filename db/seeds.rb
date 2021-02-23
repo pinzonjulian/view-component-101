@@ -14,6 +14,10 @@ users = [
   { first_name: 'Talissa', last_name: 'Stark', created_at: Time.current, updated_at: Time.current },
   { first_name: 'Gregor', last_name: 'Forrester', created_at: Time.current, updated_at: Time.current },
   { first_name: 'Daenerys', last_name: 'Targarien', created_at: Time.current, updated_at: Time.current },
+  { first_name: nil, last_name: nil, created_at: Time.current, updated_at: Time.current },
+  { first_name: nil, last_name: nil, created_at: Time.current, updated_at: Time.current },
+  { first_name: nil, last_name: nil, created_at: Time.current, updated_at: Time.current },
+  { first_name: nil, last_name: nil, created_at: Time.current, updated_at: Time.current },
 ]
 User.insert_all!(users)
 party = Party.create!(name: 'Red Wedding')

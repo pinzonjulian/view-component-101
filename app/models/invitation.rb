@@ -12,7 +12,7 @@ class Invitation < ApplicationRecord
     prepared_to_go: 10
   }
 
-  def map_transit_predictions
+  def transit_predictions
     {
       walking: "#{rand(40..50)} days",
       horse: "#{rand(20..35)} days",

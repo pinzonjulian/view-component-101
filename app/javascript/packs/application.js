@@ -20,3 +20,6 @@ import "controllers"
 require("css/application.scss")
 require("css/application.scss")
 import "@fortawesome/fontawesome-free/js/all"
+
+require("trix")
+require("@rails/actiontext")
